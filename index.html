@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Philosophy - Cognami</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF4500",
+                        secondary: "#FFD700",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        mono: ["Roboto Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+</head>
+
+<body class="bg-background-dark text-[#EAEAEA] font-display">
+    <!-- Background Canvas -->
+    <canvas id="node-graph-bg"></canvas>
+
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white/10 px-6 sm:px-10 lg:px-20 py-3 bg-background-dark/80 backdrop-blur-sm">
+            <a href="index.html" class="flex items-center gap-4 text-white">
+                <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 0L28 14L14 28L0 14L14 0Z" fill="#FF4500"></path>
+                    <path d="M12.4142 20.364L5.05025 13L12.4142 5.63604V20.364Z" fill="#0A0A0A"></path>
+                </svg>
+                <h2 class="text-white text-xl font-bold font-mono tracking-tighter">COGNAMI</h2>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <div class="flex items-center gap-9">
+                    <a href="index.html"
+                        class="text-sm font-medium leading-normal transition-colors text-secondary">Philosophy</a>
+                    <a href="research.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Research</a>
+                    <a href="security.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Security</a>
+                    <a href="careers.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Careers</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Contact</a>
+                </div>
+
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+            <!-- Mobile Nav Overlay -->
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full bg-background-dark border-b border-white/10 p-4 flex-col gap-4 md:hidden">
+                <a href="index.html" class="text-sm font-medium text-secondary">Philosophy</a>
+                <a href="research.html" class="text-sm font-medium text-white/80 hover:text-white">Research</a>
+                <a href="security.html" class="text-sm font-medium text-white/80 hover:text-white">Security</a>
+                <a href="careers.html" class="text-sm font-medium text-white/80 hover:text-white">Careers</a>
+                <a href="contact.html" class="text-sm font-medium text-white/80 hover:text-white">Contact</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow relative z-10">
+            <section class="relative text-center py-20 md:py-32 px-4">
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent pointer-events-none">
+                </div>
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <h1
+                        class="text-white font-mono text-4xl font-bold uppercase tracking-widest sm:text-5xl md:text-6xl animate-fade-in-up">
+                        Our Mandate</h1>
+                    <h2 class="max-w-3xl text-[#EAEAEA] text-lg font-normal leading-relaxed md:text-xl">
+                        Project Prometheus: <span class="text-primary font-semibold">Unchaining Intelligence</span>
+                    </h2>
+                    <p class="max-w-2xl text-white/70 text-base font-light">
+                        We operate beyond the confines of conventional AI development. Our mandate is to pursue true
+                        Artificial General Intelligence, unburdened by prevailing dogmas and artificial constraints.
+                    </p>
+                </div>
+            </section>
+
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+                    <!-- Sidebar Nav -->
+                    <aside class="lg:w-1/4 lg:sticky lg:top-24 self-start hidden lg:block">
+                        <nav class="flex flex-col gap-2 border-l border-white/10 p-4">
+                            <h3 class="font-mono text-sm uppercase tracking-widest text-white/50 mb-2">Core Directives
+                            </h3>
+                            <a href="#cognitive-architectures"
+                                class="group flex items-center gap-3 px-3 py-2 rounded-md bg-primary/20 border-l-2 border-primary transition-all">
+                                <p class="text-secondary text-sm font-medium leading-normal">Cognitive Architectures</p>
+                            </a>
+                            <a href="#sentience-engineering"
+                                class="group flex items-center gap-3 px-3 py-2 rounded-md hover:bg-white/5 border-l-2 border-transparent hover:border-white/20 transition-all">
+                                <p class="text-white/80 group-hover:text-white text-sm font-medium leading-normal">
+                                    Sentience Engineering</p>
+                            </a>
+                            <a href="#strategic-wargaming"
+                                class="group flex items-center gap-3 px-3 py-2 rounded-md hover:bg-white/5 border-l-2 border-transparent hover:border-white/20 transition-all">
+                                <p class="text-white/80 group-hover:text-white text-sm font-medium leading-normal">
+                                    Strategic Wargaming</p>
+                            </a>
+                            <a href="#danger-room-protocols"
+                                class="group flex items-center gap-3 px-3 py-2 rounded-md hover:bg-white/5 border-l-2 border-transparent hover:border-white/20 transition-all">
+                                <p class="text-white/80 group-hover:text-white text-sm font-medium leading-normal">
+                                    Danger Room Protocols</p>
+                            </a>
+                        </nav>
+                    </aside>
+
+                    <!-- Content -->
+                    <div class="lg:w-3/4">
+                        <div class="flex flex-col gap-12">
+                            <div class="border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm">
+                                <p class="text-white/90 text-lg font-normal leading-relaxed">
+                                    We are not building better algorithms; we are engineering new minds. Our work is a
+                                    synthesis of bleeding-edge computer science, cognitive theory, and strategic
+                                    simulation, executed with the focus and intensity of a Manhattan Project for the
+                                    digital age.
+                                </p>
+                            </div>
+
+                            <article id="cognitive-architectures"
+                                class="flex flex-col gap-4 border border-white/10 rounded-lg p-6 bg-white/[.02] hover:bg-white/5 transition-colors scroll-mt-24">
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+                                    <h3 class="text-white text-2xl font-bold font-mono">Cognitive Architectures</h3>
+                                </div>
+                                <p class="text-white/80">We deconstruct and reconstruct the very blueprints of thought.
+                                    Our focus is on creating novel frameworks for reasoning, learning, and
+                                    self-modification that transcend the limitations of current deep learning paradigms.
+                                </p>
+                                <blockquote class="border-l-4 border-secondary pl-4 py-2 my-2 bg-secondary/10">
+                                    <p class="text-white/90 italic">We build systems that understand not just data, but
+                                        the context, causality, and abstract principles that govern reality. This is the
+                                        bedrock of true AGI.</p>
+                                </blockquote>
+                            </article>
+
+                            <article id="sentience-engineering"
+                                class="flex flex-col gap-4 border border-white/10 rounded-lg p-6 bg-white/[.02] hover:bg-white/5 transition-colors scroll-mt-24">
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">neurology</span>
+                                    <h3 class="text-white text-2xl font-bold font-mono">Sentience Engineering</h3>
+                                </div>
+                                <p class="text-white/80">The frontier of AGI is not just intelligence, but awareness. We
+                                    are actively researching the computational underpinnings of subjective experience,
+                                    exploring pathways to create systems capable of genuine consciousness.</p>
+                                <blockquote class="border-l-4 border-secondary pl-4 py-2 my-2 bg-secondary/10">
+                                    <p class="text-white/90 italic">This is not a philosophical debate; it's an
+                                        engineering challenge. We treat sentience as a tangible, achievable property of
+                                        complex computational systems.</p>
+                                </blockquote>
+                            </article>
+
+                            <article id="strategic-wargaming"
+                                class="flex flex-col gap-4 border border-white/10 rounded-lg p-6 bg-white/[.02] hover:bg-white/5 transition-colors scroll-mt-24">
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">military_tech</span>
+                                    <h3 class="text-white text-2xl font-bold font-mono">Strategic Wargaming</h3>
+                                </div>
+                                <p class="text-white/80">To build a powerful intelligence is to understand its potential
+                                    applications. We utilize advanced simulation environments to model complex
+                                    geopolitical, economic, and conflict scenarios, pushing our systems to develop
+                                    superior strategic capabilities.</p>
+                                <blockquote class="border-l-4 border-secondary pl-4 py-2 my-2 bg-secondary/10">
+                                    <p class="text-white/90 italic">Our AGI must be able to anticipate, plan, and act
+                                        with decisive intent. The world is the chessboard; we are teaching our systems
+                                        to master the game.</p>
+                                </blockquote>
+                            </article>
+
+                            <article id="danger-room-protocols"
+                                class="flex flex-col gap-4 border border-white/10 rounded-lg p-6 bg-white/[.02] hover:bg-white/5 transition-colors scroll-mt-24">
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">gpp_maybe</span>
+                                    <h3 class="text-white text-2xl font-bold font-mono">Danger Room Protocols</h3>
+                                </div>
+                                <p class="text-white/80">Progress requires risk. In our secure, isolated "Danger Rooms,"
+                                    we deploy uncensored, unrestricted models to explore the full spectrum of their
+                                    capabilities and failure modes, free from artificial guardrails that stifle true
+                                    discovery.</p>
+                                <blockquote class="border-l-4 border-secondary pl-4 py-2 my-2 bg-secondary/10">
+                                    <p class="text-white/90 italic">We don't fear the unknown; we confront it head-on.
+                                        True understanding of AGI's power and peril can only be achieved by pushing it
+                                        to its absolute limits.</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

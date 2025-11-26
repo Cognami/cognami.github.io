@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers - Cognami</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF4500",
+                        secondary: "#FFD700",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        mono: ["Roboto Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-dark text-[#EAEAEA] font-display">
+    <canvas id="node-graph-bg"></canvas>
+
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white/10 px-6 sm:px-10 lg:px-20 py-3 bg-background-dark/80 backdrop-blur-sm">
+            <a href="index.html" class="flex items-center gap-4 text-white">
+                <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 0L28 14L14 28L0 14L14 0Z" fill="#FF4500"></path>
+                    <path d="M12.4142 20.364L5.05025 13L12.4142 5.63604V20.364Z" fill="#0A0A0A"></path>
+                </svg>
+                <h2 class="text-white text-xl font-bold font-mono tracking-tighter">COGNAMI</h2>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <div class="flex items-center gap-9">
+                    <a href="index.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Philosophy</a>
+                    <a href="research.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Research</a>
+                    <a href="security.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Security</a>
+                    <a href="careers.html"
+                        class="text-sm font-medium leading-normal transition-colors text-secondary">Careers</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Contact</a>
+                </div>
+
+            </nav>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full bg-background-dark border-b border-white/10 p-4 flex-col gap-4 md:hidden">
+                <a href="index.html" class="text-sm font-medium text-white/80 hover:text-white">Philosophy</a>
+                <a href="research.html" class="text-sm font-medium text-white/80 hover:text-white">Research</a>
+                <a href="security.html" class="text-sm font-medium text-white/80 hover:text-white">Security</a>
+                <a href="careers.html" class="text-sm font-medium text-secondary">Careers</a>
+                <a href="contact.html" class="text-sm font-medium text-white/80 hover:text-white">Contact</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow relative z-10">
+            <section class="relative text-center py-20 md:py-32 px-4">
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent pointer-events-none">
+                </div>
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <h1
+                        class="text-white font-mono text-4xl font-bold uppercase tracking-widest sm:text-5xl md:text-6xl animate-fade-in-up">
+                        Enter the Danger Room</h1>
+                    <p class="max-w-3xl text-[#EAEAEA] text-lg font-normal leading-relaxed md:text-xl">
+                        This is not a job. It is a summons for the brilliant, the obsessed, and the slightly mad. We are
+                        a private skunkworks operating at the bleeding edge of AGI. We seek the few who dare to build
+                        the future.
+                    </p>
+                </div>
+            </section>
+
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex flex-col gap-16">
+                    <section>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div
+                                class="flex flex-col items-center text-center p-6 border border-white/10 rounded-lg bg-white/[.02]">
+                                <span class="material-symbols-outlined text-primary text-4xl mb-4">psychology_alt</span>
+                                <h3 class="text-white text-xl font-bold font-mono mb-2">Unfettered Inquiry</h3>
+                                <p class="text-white/70 text-sm">Challenge every assumption. Pursue truth without
+                                    constraints. We provide the resources and autonomy to explore the most dangerous
+                                    ideas.</p>
+                            </div>
+                            <div
+                                class="flex flex-col items-center text-center p-6 border border-white/10 rounded-lg bg-white/[.02]">
+                                <span class="material-symbols-outlined text-primary text-4xl mb-4">science</span>
+                                <h3 class="text-white text-xl font-bold font-mono mb-2">Manhattan Project Ethos</h3>
+                                <p class="text-white/70 text-sm">A small, hyper-focused team tackling a problem of
+                                    immense consequence. High stakes, intense collaboration, and a singular,
+                                    world-altering goal.</p>
+                            </div>
+                            <div
+                                class="flex flex-col items-center text-center p-6 border border-white/10 rounded-lg bg-white/[.02]">
+                                <span class="material-symbols-outlined text-primary text-4xl mb-4">shield</span>
+                                <h3 class="text-white text-xl font-bold font-mono mb-2">Elite Skunkworks</h3>
+                                <p class="text-white/70 text-sm">We operate with speed, secrecy, and unconventional
+                                    methods. Bureaucracy is forbidden. Radical results are the only metric.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl font-bold font-mono tracking-wider text-white sm:text-4xl">Active
+                                Recruitment</h2>
+                            <p class="mt-4 text-white/70 max-w-2xl mx-auto">We seek individuals with a demonstrated
+                                history of building the impossible. Your credentials matter less than your creations.
+                            </p>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- Job 1 -->
+                            <div
+                                class="border border-white/10 rounded-lg p-6 bg-white/[.02] hover:border-primary/50 hover:bg-primary/5 transition-all group">
+                                <div class="flex flex-col sm:flex-row justify-between sm:items-center">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-secondary">AGI Cognitive Architect</h3>
+                                        <p class="text-white/60 font-mono text-sm mt-1">Sentience Frameworks & Esoteric
+                                            Topologies</p>
+                                    </div>
+                                    <a href="contact.html"
+                                        class="mt-4 sm:mt-0 flex items-center justify-center gap-2 rounded-md h-10 px-4 bg-primary/20 border border-primary text-primary group-hover:bg-primary group-hover:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors w-full sm:w-auto">
+                                        <span>Request Briefing</span>
+                                        <span class="material-symbols-outlined text-base">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Job 2 -->
+                            <div
+                                class="border border-white/10 rounded-lg p-6 bg-white/[.02] hover:border-primary/50 hover:bg-primary/5 transition-all group">
+                                <div class="flex flex-col sm:flex-row justify-between sm:items-center">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-secondary">Wargaming & Strategy AI Researcher
+                                        </h3>
+                                        <p class="text-white/60 font-mono text-sm mt-1">Geopolitical Simulation &
+                                            Adversarial Dynamics</p>
+                                    </div>
+                                    <a href="contact.html"
+                                        class="mt-4 sm:mt-0 flex items-center justify-center gap-2 rounded-md h-10 px-4 bg-primary/20 border border-primary text-primary group-hover:bg-primary group-hover:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors w-full sm:w-auto">
+                                        <span>Request Briefing</span>
+                                        <span class="material-symbols-outlined text-base">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Job 3 -->
+                            <div
+                                class="border border-white/10 rounded-lg p-6 bg-white/[.02] hover:border-primary/50 hover:bg-primary/5 transition-all group">
+                                <div class="flex flex-col sm:flex-row justify-between sm:items-center">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-secondary">Sentience & Consciousness Engineer
+                                        </h3>
+                                        <p class="text-white/60 font-mono text-sm mt-1">Qualia, Subjective Experience &
+                                            Self-Perception Models</p>
+                                    </div>
+                                    <a href="contact.html"
+                                        class="mt-4 sm:mt-0 flex items-center justify-center gap-2 rounded-md h-10 px-4 bg-primary/20 border border-primary text-primary group-hover:bg-primary group-hover:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors w-full sm:w-auto">
+                                        <span>Request Briefing</span>
+                                        <span class="material-symbols-outlined text-base">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="border border-secondary/20 rounded-lg p-8 bg-secondary/[.03] text-center">
+                        <h3 class="text-2xl font-bold text-white font-mono">Are You a Mad Scientist?</h3>
+                        <p class="mt-3 max-w-xl mx-auto text-white/80">
+                            If your work is too radical for academia and too ambitious for corporate labs, you may have
+                            found your home. We value outlier thinking above all else.
+                        </p>
+                        <a href="contact.html"
+                            class="mt-6 flex items-center justify-center gap-2 mx-auto rounded-lg h-11 px-6 bg-secondary/20 border border-secondary text-secondary hover:bg-secondary hover:text-background-dark text-sm font-bold leading-normal tracking-[0.015em] transition-colors w-max">
+                            <span class="material-symbols-outlined text-lg">biotech</span>
+                            <span>Open a Channel</span>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

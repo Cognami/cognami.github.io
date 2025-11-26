@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Cognami</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF4500",
+                        secondary: "#FFD700",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        mono: ["Roboto Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-dark text-[#EAEAEA] font-display">
+    <canvas id="node-graph-bg"></canvas>
+
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white/10 px-6 sm:px-10 lg:px-20 py-3 bg-background-dark/80 backdrop-blur-sm">
+            <a href="index.html" class="flex items-center gap-4 text-white">
+                <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 0L28 14L14 28L0 14L14 0Z" fill="#FF4500"></path>
+                    <path d="M12.4142 20.364L5.05025 13L12.4142 5.63604V20.364Z" fill="#0A0A0A"></path>
+                </svg>
+                <h2 class="text-white text-xl font-bold font-mono tracking-tighter">COGNAMI</h2>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <div class="flex items-center gap-9">
+                    <a href="index.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Philosophy</a>
+                    <a href="research.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Research</a>
+                    <a href="security.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Security</a>
+                    <a href="careers.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Careers</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium leading-normal transition-colors text-secondary">Contact</a>
+                </div>
+            </nav>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full bg-background-dark border-b border-white/10 p-4 flex-col gap-4 md:hidden">
+                <a href="index.html" class="text-sm font-medium text-white/80 hover:text-white">Philosophy</a>
+                <a href="research.html" class="text-sm font-medium text-white/80 hover:text-white">Research</a>
+                <a href="security.html" class="text-sm font-medium text-white/80 hover:text-white">Security</a>
+                <a href="careers.html" class="text-sm font-medium text-white/80 hover:text-white">Careers</a>
+                <a href="contact.html" class="text-sm font-medium text-secondary">Contact</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow relative z-10">
+            <section class="relative text-center py-20 md:py-32 px-4">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent pointer-events-none">
+                </div>
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <h1
+                        class="text-white font-mono text-4xl font-bold uppercase tracking-widest sm:text-5xl md:text-6xl animate-fade-in-up">
+                        Engage Cognami</h1>
+                    <h2 class="max-w-3xl text-[#EAEAEA] text-lg font-normal leading-relaxed md:text-xl">
+                        Join the <span class="text-primary font-semibold">Skunkworks</span> of Advanced General
+                        Intelligence
+                    </h2>
+                    <p class="max-w-2xl text-white/70 text-base font-light">
+                        We seek collaborators with the audacity and vision to shape the future. This is a call to
+                        pioneers, strategic partners, and unconventional thinkers ready to engage in high-stakes R&D.
+                    </p>
+                </div>
+            </section>
+
+            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm h-full">
+                        <h3 class="font-mono text-xl text-secondary mb-4 uppercase tracking-wider">Strategic Channels
+                        </h3>
+                        <p class="text-white/80 leading-relaxed mb-6">For inquiries regarding strategic partnerships,
+                            investment, or to explore synergies with our core R&D mission, please use the designated
+                            secure channels. We are not open to general inquiries at this time.</p>
+                        <div class="space-y-4">
+                            <a href="mailto:strategic-partners@cognami.dev" class="group flex items-center gap-4">
+                                <span class="material-symbols-outlined text-primary text-2xl">handshake</span>
+                                <div class="font-mono">
+                                    <p class="text-white/60 text-xs uppercase">Strategic Partnerships</p>
+                                    <p class="text-white/90 group-hover:text-secondary transition-colors">
+                                        strategic-partners@cognami.dev</p>
+                                </div>
+                            </a>
+                            <a href="mailto:danger-room-ops@cognami.dev" class="group flex items-center gap-4">
+                                <span class="material-symbols-outlined text-primary text-2xl">security</span>
+                                <div class="font-mono">
+                                    <p class="text-white/60 text-xs uppercase">Encrypted Comms</p>
+                                    <p class="text-white/90 group-hover:text-secondary transition-colors">
+                                        danger-room-ops@cognami.dev</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm h-full">
+                        <h3 class="font-mono text-xl text-secondary mb-4 uppercase tracking-wider">Operational Site</h3>
+                        <p class="text-white/80 leading-relaxed mb-6">Strategically situated in the Washington D.C.
+                            metro area, we operate in close proximity to the centers of military and political power in
+                            Arlington, Chantilly, and the District.</p>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary text-2xl">lan</span>
+                            <div class="font-mono">
+                                <p class="text-white/60 text-xs uppercase">HEADQUARTERS</p>
+                                <p class="text-white/90">National Capital Region</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

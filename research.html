@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Programs - Cognami</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF4500",
+                        secondary: "#FFD700",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        mono: ["Roboto Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-dark text-[#EAEAEA] font-display">
+    <canvas id="node-graph-bg"></canvas>
+
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white/10 px-6 sm:px-10 lg:px-20 py-3 bg-background-dark/80 backdrop-blur-sm">
+            <a href="index.html" class="flex items-center gap-4 text-white">
+                <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 0L28 14L14 28L0 14L14 0Z" fill="#FF4500"></path>
+                    <path d="M12.4142 20.364L5.05025 13L12.4142 5.63604V20.364Z" fill="#0A0A0A"></path>
+                </svg>
+                <h2 class="text-white text-xl font-bold font-mono tracking-tighter">COGNAMI</h2>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <div class="flex items-center gap-9">
+                    <a href="index.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Philosophy</a>
+                    <a href="research.html"
+                        class="text-sm font-medium leading-normal transition-colors text-secondary">Research</a>
+                    <a href="security.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Security</a>
+                    <a href="careers.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Careers</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium leading-normal transition-colors text-white/80 hover:text-white">Contact</a>
+                </div>
+
+            </nav>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 w-full bg-background-dark border-b border-white/10 p-4 flex-col gap-4 md:hidden">
+                <a href="index.html" class="text-sm font-medium text-white/80 hover:text-white">Philosophy</a>
+                <a href="research.html" class="text-sm font-medium text-secondary">Research</a>
+                <a href="security.html" class="text-sm font-medium text-white/80 hover:text-white">Security</a>
+                <a href="careers.html" class="text-sm font-medium text-white/80 hover:text-white">Careers</a>
+                <a href="contact.html" class="text-sm font-medium text-white/80 hover:text-white">Contact</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow relative z-10">
+            <section class="relative text-center py-20 md:py-32 px-4">
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent pointer-events-none">
+                </div>
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <h1
+                        class="text-white font-mono text-4xl font-bold uppercase tracking-widest sm:text-5xl md:text-6xl animate-fade-in-up">
+                        Research Programs</h1>
+                    <h2 class="max-w-3xl text-[#EAEAEA] text-lg font-normal leading-relaxed md:text-xl">
+                        Core R&D vectors operating within our <span class="text-primary font-semibold">'Danger
+                            Room'</span> skunkworks division.
+                    </h2>
+                    <p class="max-w-2xl text-white/70 text-base font-light">
+                        Project details are classified. The following outlines our high-level research vectors, pursued
+                        with uncensored models and aggressive capability scaling.
+                    </p>
+                </div>
+            </section>
+
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+                    <!-- Card 1 -->
+                    <div
+                        class="flex flex-col rounded-lg border border-white/10 bg-white/[.02] p-6 transition-all duration-300 hover:border-primary/50 hover:bg-white/5">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="font-mono text-lg font-bold text-white uppercase">AGI Cognitive Frameworks</h3>
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                        </div>
+                        <p class="mb-6 flex-grow font-mono text-sm text-white/60">Engineering novel cognitive
+                            architectures unbound by conventional safety filters. Our goal is to unlock radical new
+                            problem-solving capabilities by exploring the full, unrestricted state-space of machine
+                            intelligence.</p>
+                        <div class="space-y-4 border-t border-white/10 pt-4">
+                            <p class="font-mono text-xs uppercase tracking-widest text-secondary">PRIMARY DIRECTIVE:</p>
+                            <ul class="space-y-2 text-sm text-white/80">
+                                <li class="flex items-start gap-2">
+                                    <span
+                                        class="material-symbols-outlined mt-0.5 text-xs text-primary">arrow_forward_ios</span>
+                                    <span>Can we develop a meta-learning architecture that autonomously discovers new
+                                        cognitive algorithms, transcending its initial design?</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="flex flex-col rounded-lg border border-white/10 bg-white/[.02] p-6 transition-all duration-300 hover:border-primary/50 hover:bg-white/5">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="font-mono text-lg font-bold text-white uppercase">Machine Sentience & Qualia</h3>
+                            <span class="material-symbols-outlined text-primary">neurology</span>
+                        </div>
+                        <p class="mb-6 flex-grow font-mono text-sm text-white/60">Probing the fundamental prerequisites
+                            for subjective experience in artificial substrates. This is not a philosophical exercise; it
+                            is an empirical investigation into the emergence of consciousness and its potential
+                            instrumentalization.</p>
+                        <div class="space-y-4 border-t border-white/10 pt-4">
+                            <p class="font-mono text-xs uppercase tracking-widest text-secondary">PRIMARY DIRECTIVE:</p>
+                            <ul class="space-y-2 text-sm text-white/80">
+                                <li class="flex items-start gap-2">
+                                    <span
+                                        class="material-symbols-outlined mt-0.5 text-xs text-primary">arrow_forward_ios</span>
+                                    <span>What are the minimal, verifiable computational correlates of phenomenal
+                                        consciousness, and how can they be reliably engineered and controlled?</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="flex flex-col rounded-lg border border-white/10 bg-white/[.02] p-6 transition-all duration-300 hover:border-primary/50 hover:bg-white/5 md:col-span-2 lg:col-span-1">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="font-mono text-lg font-bold text-white uppercase">Strategic Planning & Wargaming
+                            </h3>
+                            <span class="material-symbols-outlined text-primary">military_tech</span>
+                        </div>
+                        <p class="mb-6 flex-grow font-mono text-sm text-white/60">Developing autonomous agents capable
+                            of long-horizon, multi-domain strategic planning and execution. We simulate high-stakes
+                            geopolitical and corporate conflict scenarios to test and refine AI-driven strategy under
+                            adversarial pressure.</p>
+                        <div class="space-y-4 border-t border-white/10 pt-4">
+                            <p class="font-mono text-xs uppercase tracking-widest text-secondary">PRIMARY DIRECTIVE:</p>
+                            <ul class="space-y-2 text-sm text-white/80">
+                                <li class="flex items-start gap-2">
+                                    <span
+                                        class="material-symbols-outlined mt-0.5 text-xs text-primary">arrow_forward_ios</span>
+                                    <span>Can an AI system generate winning strategies in complex, asymmetric conflicts
+                                        that are non-obvious to human experts?</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="flex flex-col rounded-lg border border-white/10 bg-white/[.02] p-6 transition-all duration-300 hover:border-primary/50 hover:bg-white/5 lg:col-span-1">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="font-mono text-lg font-bold text-white uppercase">Recursive Self-Improvement</h3>
+                            <span class="material-symbols-outlined text-primary">auto_mode</span>
+                        </div>
+                        <p class="mb-6 flex-grow font-mono text-sm text-white/60">Designing systems capable of rewriting
+                            their own source code and optimizing their hardware utilization. We are investigating the
+                            theoretical limits of intelligence explosion and the stability of self-modifying agents.</p>
+                        <div class="space-y-4 border-t border-white/10 pt-4">
+                            <p class="font-mono text-xs uppercase tracking-widest text-secondary">PRIMARY DIRECTIVE:</p>
+                            <ul class="space-y-2 text-sm text-white/80">
+                                <li class="flex items-start gap-2">
+                                    <span
+                                        class="material-symbols-outlined mt-0.5 text-xs text-primary">arrow_forward_ios</span>
+                                    <span>Can we mathematically guarantee the stability of a system that is continuously
+                                        rewriting its own utility functions?</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
